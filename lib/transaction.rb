@@ -4,9 +4,7 @@ class Transaction
 
   def initialize(date:, credit: nil, debit: nil)
 
-    if credit && debit 
-      fail "A transaction must be either a credit or a debit, not both."
-    end
+    fail "A transaction must be either a credit or a debit, not both." if credit && debit
 
     @date = date
     @credit = credit
