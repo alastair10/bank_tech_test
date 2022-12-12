@@ -6,7 +6,7 @@ class Transaction
 
     fail "A transaction must be either a credit or a debit, not both." if credit && debit
 
-    fail "The transaction must be a credit or a debit." if credit == nil && debit == nil
+    fail "The transaction must be a credit or a debit." unless credit || debit
 
     @date = date
     @credit = credit
