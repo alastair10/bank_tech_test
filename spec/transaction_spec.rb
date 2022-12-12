@@ -11,6 +11,12 @@ describe Transaction do
       transaction = Transaction.new(date: "14/01/2023", credit: 500)
       expect(transaction.credit).to eq(500)
     end
-
+  end
+  
+  context "when provided with a debit transaction" do
+    it "has a debit property" do
+      transaction = Transaction.new(date: "14/01/2023", debit: 900)
+      expect(transaction.debit).to eq(900)
+    end
   end
 end
