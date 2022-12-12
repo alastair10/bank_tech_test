@@ -22,7 +22,7 @@ describe Transaction do
 
   context "when given a credit and debit transaction" do
     it "raises an error" do
-      expect{Transaction.new(date: "14/01/2023", credit: 400, debit: 100)}.to raise_error "A transaction must be either a credit or a debit, not both."
+      expect{Transaction.new(date: "14/01/2023", credit: 400, debit: 100)}.to raise_error "The transaction must be either a credit or a debit, not both."
     end
   end
 
