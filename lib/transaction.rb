@@ -2,7 +2,9 @@ class Transaction
 
   attr_reader  :date, :credit, :debit
 
-  def initialize(date:, credit: nil, debit: nil)
+  def initialize(date: nil, credit: nil, debit: nil)
+
+    fail "The transaction must have a date." unless date
 
     fail "A transaction must be either a credit or a debit, not both." if credit && debit
 

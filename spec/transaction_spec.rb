@@ -31,4 +31,10 @@ describe Transaction do
       expect{Transaction.new(date: "14/01/2023")}.to raise_error "The transaction must be a credit or a debit."
     end
   end
+
+  context "when the transaction is missing a date" do
+    it "raises an error" do
+      expect{transaction = Transaction.new(credit: 850)}.to raise_error ("The transaction must have a date.")
+    end
+  end
 end
