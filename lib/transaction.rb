@@ -3,14 +3,14 @@ class Transaction
 
   attr_reader  :date, :credit, :debit, :balance
 
-  def initialize(date: nil, credit: nil, debit: nil, prior_balance:)
+  def initialize(date: nil, credit: nil, debit: nil, balance: nil)
 
     param_validator(date, credit, debit)
 
     @date = date
     @credit = credit
     @debit = debit
-    @balance = prior_balance + credit.to_i - debit.to_i
+    @balance = balance
   end
 
   private 
