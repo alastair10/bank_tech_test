@@ -1,4 +1,4 @@
-class Account_Manager
+class Account
   
   attr_reader :balance, :transactions
 

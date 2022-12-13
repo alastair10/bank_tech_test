@@ -1,6 +1,6 @@
-require "account_manager"
+require "account"
 
-describe Account_Manager do
+describe Account do
 
   it "initializes with an account balance of zero" do
     expect(described_class.new.balance).to eq(0)
