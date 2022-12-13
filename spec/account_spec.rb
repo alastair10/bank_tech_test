@@ -28,9 +28,22 @@ let(:transaction_double) { instance_double("Transaction") }
     it "adds the debit to an array of transaction objects" do
       account = Account.new(transaction_class: transaction_class_double)
       allow(transaction_class_double).to receive(:new)
+      
       account.withdraw("13/12/2022", 100)
 
       expect(transaction_class_double).to have_received(:new).with(date: "13/12/2022", debit: 100, balance: -100)
+    end
+  end
+
+  context "when making a deposit and then a withdrawal" do
+    it "balance shows the difference of the credit and debit transactions" do
+      account = Account.new(transaction_class: transaction_class_double)
+      allow(transaction_class_double).to receive(:new)
+      
+      account.deposit("13/12/2022", 500)
+      account.withdraw("13/12/2022", 300)
+      
+      expect(account.balance).to eq(200)
     end
   end
 end
