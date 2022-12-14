@@ -5,10 +5,6 @@ class StatementPrinter
     header + format_rows(transactions)  
   end
 
-  def header
-    "date || credit || debit || balance\n"
-  end
-
   def format_rows(transactions)
     sorted_transactions = transactions.sort_by(&:date).reverse
 
@@ -18,6 +14,10 @@ class StatementPrinter
   end
 
   private
+  
+  def header
+    "date || credit || debit || balance\n"
+  end
 
   def transaction_value_formatter(credit_or_debit)
     credit_or_debit ? "#{'%.2f' % credit_or_debit} " : ""

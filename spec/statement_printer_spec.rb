@@ -31,5 +31,4 @@ describe StatementPrinter do
       expect(result).to eq(expected_output)
     end
   end
-
 end
