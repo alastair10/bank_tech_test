@@ -14,16 +14,25 @@ class Account
 
   def deposit(date, credit)
     @balance += credit
-    @transactions.push(@transaction_class.new(date: date, credit: credit, balance: @balance))
+    log_credit_transaction(date, credit)
   end
 
   def withdraw(date, debit)
     @balance -= debit
-    @transactions.push(@transaction_class.new(date: date, debit: debit, balance: @balance))
+    log_debit_transaction(date, debit)
   end
 
   def statement
     @printer.print_statement(@transactions)
   end
 
+  private
+
+  def log_credit_transaction(date, credit)
+    @transactions.push(@transaction_class.new(date: date, credit: credit, balance: @balance))
+  end
+
+  def log_debit_transaction(date, debit)
+    @transactions.push(@transaction_class.new(date: date, debit: debit, balance: @balance))
+  end
 end
