@@ -1,5 +1,5 @@
-require "transaction"
-require "statement_printer"
+require_relative "./transaction"
+require_relative "./statement_printer"
 
 class Account
   

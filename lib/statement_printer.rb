@@ -2,7 +2,7 @@
 class StatementPrinter
 
   def print_statement(transactions)
-    header + format_rows(transactions)  
+    puts header + format_rows(transactions)  
   end
 
   def format_rows(transactions)
