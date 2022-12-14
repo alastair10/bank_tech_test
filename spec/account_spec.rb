@@ -45,6 +45,6 @@ describe Account do
       
       expect(account.balance).to eq(200)
     end
-  end
+  end  
 
 end

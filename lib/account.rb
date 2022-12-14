@@ -1,11 +1,13 @@
-require_relative "./transaction"
+require "transaction"
+require "statement_printer"
 
 class Account
   
   attr_reader :balance, :transactions
 
-  def initialize(transaction_class: Transaction)
+  def initialize(transaction_class: Transaction, printer: StatementPrinter.new)
     @transaction_class = transaction_class
+    @printer = printer
     @balance = 0
     @transactions = []
   end
@@ -20,5 +22,8 @@ class Account
     @transactions.push(@transaction_class.new(date: date, debit: debit, balance: @balance))
   end
 
-  
+  def statement
+    @printer.print_statement(@transactions)
+  end
+
 end
