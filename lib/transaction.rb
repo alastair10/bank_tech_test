@@ -1,4 +1,4 @@
-# class stores details for a single transaction
+# class defines the details for a single transaction
 class Transaction
 
   attr_reader :date, :credit, :debit, :balance
