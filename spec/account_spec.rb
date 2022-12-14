@@ -2,8 +2,8 @@ require "account"
 
 describe Account do
 
-let(:transaction_class_double) { class_double("Transaction") }
-let(:transaction_double)       { instance_double("Transaction") }
+  let(:transaction_class_double) { class_double("Transaction") }
+  let(:transaction_double)       { instance_double("Transaction") }
 
   it "initializes with an account balance of zero" do
     expect(described_class.new.balance).to eq(0)
@@ -46,4 +46,5 @@ let(:transaction_double)       { instance_double("Transaction") }
       expect(account.balance).to eq(200)
     end
   end
+
 end

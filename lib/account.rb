@@ -19,4 +19,6 @@ class Account
     @balance -= debit
     @transactions.push(@transaction_class.new(date: date, debit: debit, balance: @balance))
   end
+
+  
 end

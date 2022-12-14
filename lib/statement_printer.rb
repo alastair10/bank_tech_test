@@ -1,6 +1,10 @@
 # class handles printing and formatting of the account statement
 class StatementPrinter
-  
+
+  def print_statement(transactions)
+    header + format_rows(transactions)  
+  end
+
   def header
     "date || credit || debit || balance\n"
   end
