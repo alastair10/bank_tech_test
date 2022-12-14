@@ -15,11 +15,13 @@ class Account
   def deposit(date, credit)
     @balance += credit
     log_credit_transaction(date, credit)
+    deposit_confirmation_message(credit, @balance)
   end
 
   def withdraw(date, debit)
     @balance -= debit
     log_debit_transaction(date, debit)
+    withdraw_confirmation_message(debit, @balance)
   end
 
   def statement
@@ -34,6 +36,14 @@ class Account
 
   def log_debit_transaction(date, debit)
     @transactions.push(@transaction_class.new(date: date, debit: debit, balance: @balance))
+  end
+
+  def deposit_confirmation_message(credit, balance)
+    "You deposited #{credit}. Your new balance is: #{balance}."
+  end
+
+  def withdraw_confirmation_message(debit, balance)
+    "You withdrew #{debit}. Your new balance is: #{balance}."
   end
 
 end
