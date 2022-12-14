@@ -1,5 +1,5 @@
-require_relative "./transaction"
-require_relative "./statement_printer"
+require_relative './transaction'
+require_relative './statement_printer'
 
 class Account
   
@@ -35,4 +35,5 @@ class Account
   def log_debit_transaction(date, debit)
     @transactions.push(@transaction_class.new(date: date, debit: debit, balance: @balance))
   end
+
 end

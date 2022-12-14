@@ -2,7 +2,7 @@
 class StatementPrinter
 
   def print_statement(transactions)
-    puts header + format_rows(transactions)  
+    puts header + format_rows(transactions)
   end
 
   def format_rows(transactions)
@@ -14,13 +14,13 @@ class StatementPrinter
   end
 
   private
-  
+
   def header
     "date || credit || debit || balance\n"
   end
 
   def transaction_value_formatter(credit_or_debit)
-    credit_or_debit ? "#{'%.2f' % credit_or_debit} " : ""
+    credit_or_debit ? "#{'%.2f' % credit_or_debit} " : ''
   end
 
   def balance_formatter(balance)
