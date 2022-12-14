@@ -47,7 +47,7 @@ The user interacts with the app by providing the date and amounts of each transa
 
 To run the app in IRB via the terminal:
 ```
-$ irb -r ./lib/accoun.rb
+$ irb -r ./lib/account.rb
 ```
 Create a new account:
 ```
