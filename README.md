@@ -21,12 +21,13 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
-## App Design
+## App design
 The App is split into 3 classes: 
 - `Transaction`: defines the details for a single transaction. This includes date, credit/debit amounts, and a running account balance. 
 - `Account`: creates a new instance of `Transaction` for each `#deposit` and `#withdrawal` made. `#statement` creates a new instance of `StatementPrinter` to generate the account statement at any given time.
 - `StatementPrinter`: handles the printing and formatting of the account statement. The `#print_statement` method loops through each individual transaction stored on `Account` and outputs to the terminal. 
 
+### Sequence diagram
 ![sequence_diagram](resources/sequence_diagram_bank_tech_test.png)
 
 ## Running the app
@@ -71,7 +72,7 @@ $ cd bank_tech_test
 $ rspec
 ```
 
-### App Preview
+### App screenshot preview
 ![App Preview](resources/terminal_example.png)
 
 ### Technologies
