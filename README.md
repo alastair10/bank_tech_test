@@ -1,5 +1,12 @@
 # Bank Tech Test
 
+
+### UPDATE: Reviewer Feedback
+
+The following is the reviewer's feedback on my tech test submission:
+
+_There is a lot of good work here, Alastair. Your documentation includes a good introduction to design, including a fair attempt at use of sequence diagram. It may be worth checking some details of the layout of this, e.g. do we need to have a separate "individual transaction" on the diagram?  Your installation and running instructions work exactly as your documentation mentions they should. You have a good, clean, clear, commit history showing a TDD process. You have good use of doubles for unit testing and some integration testing. Your code sensibly allows key fields of the account class to only be read, but not written to without your own access methods. As a point to consider, I notice that you validate input types for transactions, but not the values themselves. Due to the very high quality of work throughout, I am awarding you a pass at professional level, however, in future do carefully also consider validation of the values of inputs, not just their types. A less lenient employer may fail your submission if this is not included._
+
 ### Requirements
 
 * You should be able to interact with your code via a REPL like IRB or Node.  (You don't need to implement a command line interface that takes input from STDIN.)
